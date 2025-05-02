@@ -1,0 +1,86 @@
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f8; /* Daha yumuşak bir arka plan */
+    min-height: 100vh;
+    padding: 20px; /* Genel iç boşluk */
+}
+
+.login-form-wrapper { /* Formu saran bir div ekleyelim */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Daha belirgin bir gölge */
+    width: 400px; /* Sabit bir genişlik belirleyelim */
+    max-width: 95%; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;//* Mobil uyumluluk için maksimum genişlik */
+}
+
+.login-form-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #37474f; /* Daha koyu bir başlık rengi */
+    text-align: center;
+}
+
+.login-form-group { /* Input ve label gruplaması için */
+    margin-bottom: 20px;
+}
+
+.login-form-label {
+    display: block; /* Label'ı ayrı bir satırda göster */
+    margin-bottom: 5px;
+    color: #546e7a;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.login-form-container input {
+    width: 100%; /* Wrapper içindeki alanı kapla */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Daha belirgin bir border */
+    border-radius: 6px;
+    box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+    font-size: 1rem;
+}
+
+.login-form-container input:focus {
+    outline: none;
+    border-color: #007bff; /* Odaklandığında farklı bir border rengi */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Hafif bir odaklanma gölgesi */
+}
+
+.login-form-button {
+    width: 100%; /* Wrapper içindeki alanı kapla */
+    padding: 12px 20px;
+    background-color: black; /* Daha canlı bir buton rengi */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease-in-out; /* Yumuşak geçiş efekti */
+}
+
+.login-form-button:hover {
+    background-color: dimgray; /* Hover efekti için daha koyu bir renk */
+}
+
+.login-form-error {
+    color: #dc3545;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-form-wrapper small{
+    color: purple;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 0px 0px 5px purple;
+}

@@ -1,0 +1,43 @@
+.forum {
+    padding: 20px;
+    background: linear-gradient(55deg, indigo,purple,deeppink,pink,aquamarine,deepskyblue,dodgerblue,navy);
+    min-height: 100vh;
+  }
+  
+  .forum-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .forum-topic {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: snow;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .forum-topic:hover {
+    background-color:rgba(255,255, 255, 0.5);
+    color: black;
+  }
+  
+  .topic-title {
+    font-size: 20px;
+    font-weight: 600;
+
+  }
+  
+  .topic-description {
+    font-size: 14px;
+    color: white;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 50px  black;
+    background: linear-gradient(to right, transparent, black, transparent);
+  }
+  

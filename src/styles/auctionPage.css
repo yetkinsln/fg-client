@@ -1,0 +1,390 @@
+/* Main Auction Page Styles */
+.wwm-auction-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .wwm-auction-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00ccff;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+  }
+  
+  /* Search Section */
+  .wwm-auction-search {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  
+  .wwm-auction-input {
+    flex: 1;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #333;
+    border-radius: 25px 0 0 25px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .wwm-auction-input:focus {
+    border-color: #00ccff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+  }
+  
+  .wwm-auction-button {
+    padding: 12px 30px;
+    background: linear-gradient(to right, #0088ff, #00ccff);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .wwm-auction-button:hover {
+    background: linear-gradient(to right, #00ccff, #0088ff);
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.7);
+  }
+  
+  .wwm-auction-button:disabled {
+    background: #555;
+    cursor: not-allowed;
+  }
+  
+  /* Loading Spinner */
+  .wwm-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Messages */
+  .wwm-auction-error {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff6b6b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .wwm-auction-success {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #6bff6b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeOut 4s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Grid Layout */
+  .wwm-auction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+  }
+  
+  /* Player Cards */
+  .wwm-auction-card {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .wwm-auction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Player Image */
+  .wwm-player-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .wwm-player-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+  
+  .wwm-auction-card:hover .wwm-player-image {
+    transform: scale(1.05);
+  }
+  
+  /* Player Information */
+  .wwm-player-info {
+    padding: 20px;
+    position: relative;
+  }
+  
+  .wwm-player-name {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Neon Effect for Added By Section */
+  .neon-div {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .neon-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ff00fc, #00fffc, #fc00ff, #00ffc6);
+    background-size: 400% 400%;
+    animation: neonAnimation 3s ease infinite;
+    z-index: 1;
+  }
+  
+  .neon-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 
+      0 0 5px #ff00fc,
+      0 0 10px #00fffc,
+      0 0 15px #fc00ff,
+      0 0 20px #00ffc6;
+    opacity: 0.7;
+    filter: blur(5px);
+    animation: neonGlow 3s ease infinite;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  @keyframes neonAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes neonGlow {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.5; }
+  }
+  
+  .wwm-added-by {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .wwm-addedby-small {
+    font-weight: bold;
+    color: #aaa;
+    margin-right: 5px;
+  }
+  
+  .wwm-level {
+    background: linear-gradient(45deg, #ff00fc, #00fffc);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  /* Player Details */
+  .wwm-player-details {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+  }
+  
+  .wwm-player-details li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+  
+  .wwm-player-details strong {
+    display: inline-block;
+    width: 120px;
+    color: #aaa;
+  }
+  
+  .wwm-fangang-value {
+    color: #00ff88 !important;
+    font-weight: bold;
+  }
+  
+  .animate-glow {
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes textGlow {
+    from { text-shadow: 0 0 5px rgba(0, 255, 136, 0.3); }
+    to { text-shadow: 0 0 15px rgba(0, 255, 136, 0.8); }
+  }
+  
+  /* Player Actions */
+  .wwm-player-actions {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .wwm-increase-btn, .wwm-decrease-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .wwm-increase-btn {
+    background: linear-gradient(to right, #00cc66, #00ff88);
+  }
+  
+  .wwm-decrease-btn {
+    background: linear-gradient(to right, #ff3366, #ff6666);
+  }
+  
+  .wwm-increase-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .wwm-decrease-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 102, 102, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .animate-bounce {
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-3px); }
+  }
+  
+  /* Player Comment Section */
+  .wwm-player-comment {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 8px;
+  }
+  
+  .wwm-player-comment h3 {
+    color: #00ccff;
+    margin-top: 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .wwm-comment-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ddd;
+  }
+  
+  /* Player Limits */
+  .wwm-player-limits {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .wwm-player-limits p {
+    margin: 5px 0;
+  }
+  
+  .wwm-player-limits strong {
+    color: #aaa;
+  }
+  
+  /* No Players Message */
+  .wwm-no-player {
+    text-align: center;
+    color: #888;
+    font-size: 1.1rem;
+    margin: 50px 0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .wwm-auction-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .wwm-auction-title {
+      font-size: 2rem;
+    }
+    
+    .wwm-auction-search {
+      flex-direction: column;
+    }
+    
+    .wwm-auction-input {
+      border-radius: 25px;
+      margin-bottom: 10px;
+      max-width: 100%;
+    }
+    
+    .wwm-auction-button {
+      border-radius: 25px;
+      width: 100%;
+    }
+  }

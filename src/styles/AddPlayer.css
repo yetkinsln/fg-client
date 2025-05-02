@@ -1,0 +1,248 @@
+/* AddPlayer.css */
+
+.wwm-container {
+  max-width: 900px;
+  margin: 20px auto 60px auto;
+  padding: 20px 30px;
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212121;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.wwm-search-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.wwm-search-box input[type="text"] {
+  flex-grow: 1;
+  min-width: 250px;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.wwm-search-box input[type="text"]:focus {
+  border-color: #1d6fa5;
+  box-shadow: 0 0 8px #1d6fa5aa;
+}
+
+.wwm-search-box button {
+  padding: 10px 25px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  box-shadow: 0 3px 8px rgba(52,152,219,0.35);
+}
+
+.wwm-search-box button:hover {
+  background-color: #1d6fa5;
+  box-shadow: 0 5px 12px rgba(29,111,165,0.5);
+}
+
+.wwm-loading, .wwm-error, .wwm-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.wwm-error {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.wwm-info {
+  color: #666;
+  font-style: italic;
+}
+
+.wwm-result-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.wwm-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  padding: 15px 20px 22px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wwm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.18);
+}
+
+.player-image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  user-select: none;
+}
+
+.wwm-card h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.wwm-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.wwm-card ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wwm-card ul li strong {
+  color: #2980b9;
+  font-weight: 600;
+}
+
+.wwm-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.wwm-link {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wwm-link:hover {
+  background-color: #1d6fa5;
+  text-decoration: none;
+}
+
+button.wwm-link {
+  border: none;
+}
+
+button.wwm-link:focus {
+  outline: 2px solid #1d6fa5;
+  outline-offset: 2px;
+}
+
+/* Editor alanının yüksekliği & görünümü */
+.simple-editor {
+  margin-top: 20px;
+}
+
+.simple-editor textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #3498db;
+  resize: vertical;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.simple-editor textarea:focus {
+  border-color: #1d6fa5;
+  box-shadow: 0 0 10px #1d6fa5aa;
+  outline: none;
+}
+
+button[style] {
+  margin-top: 14px;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[style]:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Responsive düzen */
+
+@media screen and (max-width: 600px) {
+  .wwm-container {
+    margin: 10px 15px 40px 15px;
+    padding: 15px 20px;
+  }
+
+  .wwm-search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wwm-search-box input[type="text"], .wwm-search-box button {
+    width: 100%;
+  }
+
+  .wwm-result-list {
+    grid-template-columns: 1fr;
+  }
+
+  .wwm-card {
+    padding: 15px;
+  }
+
+  .player-image {
+    width: 110px;
+    height: 110px;
+  }
+}

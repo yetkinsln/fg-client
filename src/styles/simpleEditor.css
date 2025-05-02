@@ -1,0 +1,25 @@
+.simple-editor-container {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    background: white;
+    overflow-y: auto;
+  }
+  
+  .simple-editor {
+    outline: none;
+    min-height: 100px;
+  }
+  
+  .simple-editor-placeholder {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: #aaa;
+    pointer-events: none;
+    user-select: none;
+  }
+  
