@@ -31,8 +31,7 @@ const Navbar = () => {
                 </button>
                 <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
                     <li><a href="/">Ana Sayfa</a></li>
-                    <li><a href="/about">Hakkımızda</a></li>
-                    <li><a href="/contact">İletişim</a></li>
+                    <li><a href="mailto:fangang.football@gmail.com">İletişim</a></li>
 
                     {isLoggedIn ? (
                         <>
