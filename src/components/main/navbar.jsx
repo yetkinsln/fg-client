@@ -31,7 +31,7 @@ const Navbar = () => {
                 </button>
                 <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
                     <li><a href="/">Ana Sayfa</a></li>
-                    <li><a href="mailto:fangang.football@gmail.com">İletişim</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0/?hl=tr&tf=cm&fs=1&to=fangang.football@gmail.com">İletişim</a></li>
 
                     {isLoggedIn ? (
                         <>
