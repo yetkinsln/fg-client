@@ -79,7 +79,7 @@ const AddPlayer = () => {
       return;
     }
     try {
-      const response = await fetch("/api/player/add", {
+      const response = await fetch("https://fg-express.onrender.com/api/player/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
