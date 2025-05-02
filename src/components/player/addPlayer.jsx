@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../services/axios"; // axios instance
-import "../../styles/MyPlayers.css";
+import "../../styles/AddPlayer.css";
 import Navbar from "../main/navbar";
 import Editor from "../player/simpleEditor";
 
