@@ -114,6 +114,7 @@ const AddPlayer = () => {
       <Navbar />
       <div className="wwm-container">
         <h1>Oyuncu Ara</h1>
+        <p>Veri alınamadı hatası alırsanız, biraz bekleyip oyuncunun tam adıyla arama yapmayı deneyin.</p>
         <div className="wwm-search-box">
           <input
             type="text"
