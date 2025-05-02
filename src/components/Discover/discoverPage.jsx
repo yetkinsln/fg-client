@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from '../../services/axios';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/discoverPage.css'; // Keşfet sayfası CSS
+import Navbar from '../main/navbar'; // Navbar bileşeni
 
 const DiscoverPage = () => {
   const [players, setPlayers] = useState([]);
@@ -68,6 +69,8 @@ const DiscoverPage = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="wwm-discover-container">
       <h1 className="wwm-discover-title">Keşfet</h1>
 
@@ -95,6 +98,7 @@ const DiscoverPage = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
