@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../main/navbar';
 import Editor from './simpleEditor'; // Burayı doğru pathe göre ayarla
-import '../../styles/mp.css';
+import "../../styles/mp.css"; // CSS dosyasını doğru pathe göre ayarla
 import axios from '../../services/axios'; // axios'u doğru pathe göre ayarla
 
 const MyPlayers = () => {
