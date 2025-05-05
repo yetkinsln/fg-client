@@ -1,24 +1,49 @@
-/* AddPlayer.css */
+/* Neon Dark Theme - AddPlayer.css */
+
+:root {
+  --neon-gradient: linear-gradient(135deg, #0ff 0%, #00f 50%, #f0f 100%);
+  --neon-blue: #00f7ff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff99;
+  --bg-dark: #111;
+  --text-light: #f9f9f9;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--bg-dark);
+}
 
 .awwm-container {
   max-width: 900px;
   margin: 20px auto 60px auto;
   padding: 20px 30px;
-  background: #333;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid #222;
+  box-shadow: 0 0 15px rgba(0,255,255,0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: snow;
+  color: var(--text-light);
   overflow-y: scroll;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .awwm-container h1 {
   text-align: center;
-  color: snow;
-  margin-bottom: 25px;
-  font-weight: 700;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
 }
 
 .awwm-search-box {
@@ -31,35 +56,36 @@
 .awwm-search-box input[type="text"] {
   flex-grow: 1;
   min-width: 250px;
-  padding: 10px 15px;
+  padding: 12px 18px;
   font-size: 1.1rem;
-  border: 2px solid #3498db;
+  background-color: #1a1a1a;
+  color: var(--text-light);
+  border: 2px solid var(--neon-blue);
   border-radius: 8px;
-  outline-offset: 2px;
-  transition: border-color 0.3s ease;
+  outline: none;
+  transition: box-shadow 0.3s;
 }
 
 .awwm-search-box input[type="text"]:focus {
-  border-color: #1d6fa5;
-  box-shadow: 0 0 8px #1d6fa5aa;
+  box-shadow: 0 0 10px var(--neon-blue);
 }
 
 .awwm-search-box button {
-  padding: 10px 25px;
-  background-color: #3498db;
+  padding: 12px 25px;
+  background: var(--neon-gradient);
+  color: white;
   border: none;
   border-radius: 8px;
-  color: white;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.25s ease;
-  box-shadow: 0 3px 8px rgba(52,152,219,0.35);
+  box-shadow: 0 0 10px #00ffe0;
+  transition: transform 0.2s, box-shadow 0.3s ease;
 }
 
 .awwm-search-box button:hover {
-  background-color: #1d6fa5;
-  box-shadow: 0 5px 12px rgba(29,111,165,0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffe0;
 }
 
 .awwm-loading, .wwm-error, .wwm-info {
@@ -69,12 +95,12 @@
 }
 
 .awwm-error {
-  color: #e74c3c;
+  color: #ff4c4c;
   font-weight: 700;
 }
 
-.awwm-info {
-  color: snow;
+.awwm-info, .m-info {
+  color: var(--neon-green);
   font-style: italic;
 }
 
@@ -86,21 +112,31 @@
 }
 
 .awwm-card {
-  background: #333;
+  background: #1c1c1c;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-  padding: 15px 20px 22px 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 0 12px rgba(0,255,255,0.05);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
   text-align: center;
+  position: relative;
+}
+
+.awwm-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: var(--neon-gradient);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  pointer-events: none;
 }
 
 .awwm-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #00ffe0;
 }
 
 .aplayer-image {
@@ -108,35 +144,35 @@
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px var(--neon-pink);
   margin-bottom: 15px;
   user-select: none;
 }
 
 .awwm-card h2 {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.3rem;
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 12px;
-  color: #2c3e50;
 }
 
 .awwm-card ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 15px 0;
-  width: 100%;
   font-size: 0.95rem;
-  color: #444;
+  color: #bbb;
+  margin-bottom: 15px;
 }
 
 .awwm-card ul li {
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
 }
 
 .awwm-card ul li strong {
-  color: #2980b9;
-  font-weight: 600;
+  color: var(--neon-blue);
 }
 
 .awwm-links {
@@ -148,35 +184,33 @@
 }
 
 .awwm-link {
-  display: inline-block;
-  background-color: #3498db;
-  color: #fff;
+  background: var(--neon-gradient);
+  color: white;
   padding: 8px 16px;
   border-radius: 7px;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  user-select: none;
 }
 
 .awwm-link:hover {
-  background-color: #1d6fa5;
-  text-decoration: none;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--neon-blue);
 }
 
 button.wwm-link {
   border: none;
+  background: none;
 }
 
 button.wwm-link:focus {
-  outline: 2px solid #1d6fa5;
+  outline: 2px solid var(--neon-pink);
   outline-offset: 2px;
 }
 
-/* Editor alanının yüksekliği & görünümü */
+/* Editor */
 .simple-editor {
   margin-top: 20px;
 }
@@ -187,24 +221,24 @@ button.wwm-link:focus {
   padding: 12px 14px;
   font-size: 1rem;
   border-radius: 8px;
-  border: 2px solid #3498db;
-  resize: vertical;
+  background-color: #1e1e1e;
+  color: white;
+  border: 2px solid var(--neon-pink);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: border-color 0.3s ease;
+  transition: box-shadow 0.3s;
 }
 
 .simple-editor textarea:focus {
-  border-color: #1d6fa5;
-  box-shadow: 0 0 10px #1d6fa5aa;
+  box-shadow: 0 0 12px var(--neon-pink);
   outline: none;
 }
 
 button[style] {
   margin-top: 14px;
   background-color: transparent;
-  border: 2px solid #e74c3c;
-  color: #e74c3c;
-  font-weight: 600;
+  border: 2px solid #ff4c4c;
+  color: #ff4c4c;
+  font-weight: bold;
   font-size: 1rem;
   padding: 8px 16px;
   border-radius: 7px;
@@ -213,16 +247,11 @@ button[style] {
 }
 
 button[style]:hover {
-  background-color: #e74c3c;
-  color: white;
+  background-color: #ff4c4c;
+  color: black;
 }
 
-.m-info{
-  color: snow;
-}
-
-/* Responsive düzen */
-
+/* Responsive */
 @media screen and (max-width: 600px) {
   .awwm-container {
     margin: 10px 15px 40px 15px;
@@ -234,7 +263,7 @@ button[style]:hover {
     align-items: stretch;
   }
 
-  .awwm-search-box input[type="text"], .wwm-search-box button {
+  .awwm-search-box input[type="text"], .awwm-search-box button {
     width: 100%;
   }
 
