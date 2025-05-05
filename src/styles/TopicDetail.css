@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: flex-start;
   height: 100vh;
+  background-color: #1a1a1a;
 }
 
 .content-wrapper {
