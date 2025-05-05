@@ -2,7 +2,7 @@
 
 .topic-detail {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   height: 100vh;
 }
