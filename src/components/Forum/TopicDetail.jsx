@@ -81,15 +81,18 @@ return (
     {!posts.length && <div className="no-posts">Bu konuda henüz gönderi yok.</div>}
 
     <form onSubmit={handleSubmit} className="post-form">
-        <textarea 
-            value={newPostContent}
-            onChange={(e) => setNewPostContent(e.target.value)}
-            placeholder="Gönderinizi yazın..."
-            className="post-textarea"
-            rows="4"
-        />
-        <button type="submit" className="post-button">Gönder</button>
-    </form>
+  <div className="post-form-inner">
+    <textarea 
+        value={newPostContent}
+        onChange={(e) => setNewPostContent(e.target.value)}
+        placeholder="Gönderinizi yazın..."
+        className="post-textarea"
+        rows="1"
+    />
+    <button type="submit" className="post-button">Gönder</button>
+  </div>
+</form>
+
 
     <div className="post-list">
         {posts.map((post) => (
