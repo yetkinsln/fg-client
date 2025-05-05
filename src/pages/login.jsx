@@ -8,10 +8,10 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-
     const navigate = useNavigate();
 
     const handleLogin = async () => {
+      setMessage('Lütfen Bekleyin ...'); // Önceki mesajı temizle
         try {
             const res = await API.post('/auth/login', { username, password });
             saveToken(res.data.token);
