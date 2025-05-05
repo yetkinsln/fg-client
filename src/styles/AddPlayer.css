@@ -4,17 +4,17 @@
   max-width: 900px;
   margin: 20px auto 60px auto;
   padding: 20px 30px;
-  background: #f8fafc;
+  background: #333;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #212121;
+  color: snow;
   overflow-y: scroll;
 }
 
 .awwm-container h1 {
   text-align: center;
-  color: #333;
+  color: snow;
   margin-bottom: 25px;
   font-weight: 700;
   text-transform: uppercase;
@@ -74,7 +74,7 @@
 }
 
 .awwm-info {
-  color: #666;
+  color: snow;
   font-style: italic;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .awwm-card {
-  background: white;
+  background: #333;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.12);
   padding: 15px 20px 22px 20px;
