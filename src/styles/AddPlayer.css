@@ -1,6 +1,6 @@
 /* AddPlayer.css */
 
-.wwm-container {
+.awwm-container {
   max-width: 900px;
   margin: 20px auto 60px auto;
   padding: 20px 30px;
@@ -12,7 +12,7 @@
   overflow-y: scroll;
 }
 
-h1 {
+.awwm-container h1 {
   text-align: center;
   color: #333;
   margin-bottom: 25px;
@@ -21,14 +21,14 @@ h1 {
   letter-spacing: 2px;
 }
 
-.wwm-search-box {
+.awwm-search-box {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-bottom: 25px;
 }
 
-.wwm-search-box input[type="text"] {
+.awwm-search-box input[type="text"] {
   flex-grow: 1;
   min-width: 250px;
   padding: 10px 15px;
@@ -39,12 +39,12 @@ h1 {
   transition: border-color 0.3s ease;
 }
 
-.wwm-search-box input[type="text"]:focus {
+.awwm-search-box input[type="text"]:focus {
   border-color: #1d6fa5;
   box-shadow: 0 0 8px #1d6fa5aa;
 }
 
-.wwm-search-box button {
+.awwm-search-box button {
   padding: 10px 25px;
   background-color: #3498db;
   border: none;
@@ -57,35 +57,35 @@ h1 {
   box-shadow: 0 3px 8px rgba(52,152,219,0.35);
 }
 
-.wwm-search-box button:hover {
+.awwm-search-box button:hover {
   background-color: #1d6fa5;
   box-shadow: 0 5px 12px rgba(29,111,165,0.5);
 }
 
-.wwm-loading, .wwm-error, .wwm-info {
+.awwm-loading, .wwm-error, .wwm-info {
   text-align: center;
   margin-top: 20px;
   font-size: 1.1rem;
 }
 
-.wwm-error {
+.awwm-error {
   color: #e74c3c;
   font-weight: 700;
 }
 
-.wwm-info {
+.awwm-info {
   color: #666;
   font-style: italic;
 }
 
-.wwm-result-list {
+.awwm-result-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 18px;
   margin-top: 15px;
 }
 
-.wwm-card {
+.awwm-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.12);
@@ -98,12 +98,12 @@ h1 {
   text-align: center;
 }
 
-.wwm-card:hover {
+.awwm-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.18);
 }
 
-.player-image {
+.aplayer-image {
   width: 130px;
   height: 130px;
   object-fit: cover;
@@ -113,14 +113,14 @@ h1 {
   user-select: none;
 }
 
-.wwm-card h2 {
+.awwm-card h2 {
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 12px;
   color: #2c3e50;
 }
 
-.wwm-card ul {
+.awwm-card ul {
   list-style: none;
   padding: 0;
   margin: 0 0 15px 0;
@@ -129,17 +129,17 @@ h1 {
   color: #444;
 }
 
-.wwm-card ul li {
+.awwm-card ul li {
   padding: 5px 0;
   border-bottom: 1px solid #eee;
 }
 
-.wwm-card ul li strong {
+.awwm-card ul li strong {
   color: #2980b9;
   font-weight: 600;
 }
 
-.wwm-links {
+.awwm-links {
   display: flex;
   justify-content: center;
   gap: 14px;
@@ -147,7 +147,7 @@ h1 {
   margin-top: 10px;
 }
 
-.wwm-link {
+.awwm-link {
   display: inline-block;
   background-color: #3498db;
   color: #fff;
@@ -162,7 +162,7 @@ h1 {
   user-select: none;
 }
 
-.wwm-link:hover {
+.awwm-link:hover {
   background-color: #1d6fa5;
   text-decoration: none;
 }
@@ -224,29 +224,29 @@ button[style]:hover {
 /* Responsive düzen */
 
 @media screen and (max-width: 600px) {
-  .wwm-container {
+  .awwm-container {
     margin: 10px 15px 40px 15px;
     padding: 15px 20px;
   }
 
-  .wwm-search-box {
+  .awwm-search-box {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .wwm-search-box input[type="text"], .wwm-search-box button {
+  .awwm-search-box input[type="text"], .wwm-search-box button {
     width: 100%;
   }
 
-  .wwm-result-list {
+  .awwm-result-list {
     grid-template-columns: 1fr;
   }
 
-  .wwm-card {
+  .awwm-card {
     padding: 15px;
   }
 
-  .player-image {
+  .aplayer-image {
     width: 110px;
     height: 110px;
   }

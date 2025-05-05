@@ -112,10 +112,10 @@ const AddPlayer = () => {
   return (
     <>
       <Navbar />
-      <div className="wwm-container">
+      <div className="awwm-container">
         <h1>Oyuncu Ara</h1>
-        <p className="m-info">Veri alınamadı hatası alırsanız, biraz bekleyip oyuncunun tam adıyla arama yapmayı deneyin.</p>
-        <div className="wwm-search-box">
+        <p className="awmm-info">Veri alınamadı hatası alırsanız, biraz bekleyip oyuncunun tam adıyla arama yapmayı deneyin.</p>
+        <div className="awwm-search-box">
           <input
             type="text"
             value={searchQuery}
@@ -126,20 +126,20 @@ const AddPlayer = () => {
           <button onClick={handleSearch}>Ara</button>
         </div>
 
-        {loading && <p className="wwm-loading">Yükleniyor...</p>}
-        {error && <p className="wwm-error">{error}</p>}
+        {loading && <p className="awwm-loading">Yükleniyor...</p>}
+        {error && <p className="awwm-error">{error}</p>}
 
         {/* Sonuçlar: */}
         {!selected && results.length > 0 && (
           <div>
             <p>Oyuncular:</p>
-            <div className="wwm-result-list">
+            <div className="awwm-result-list">
               {results.map((player, idx) => (
-                <div className="wwm-card" key={idx} onClick={() => setSelected(player)} style={{ cursor: "pointer" }}>
+                <div className="awwm-card" key={idx} onClick={() => setSelected(player)} style={{ cursor: "pointer" }}>
                   <img
                     src={player.image || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficrier.org%2Fwp-content%2Fuploads%2F2022%2F12%2Fmedia-Event-Image-Not-Found.jpg&f=1&nofb=1&ipt=7e75f15af6d54f6909bbb39e59f66e217d425eeedc9f11e8ef50e43ad150daf5"}
                     alt={player.name}
-                    className="player-image"
+                    className="aplayer-image"
                   />
                   <h2>{player.name}</h2>
                   <ul>
@@ -148,12 +148,12 @@ const AddPlayer = () => {
                     <li><strong>Piyasa Değeri:</strong> {player.marketValue}</li>
                   </ul>
                   {player.transfermarktProfile && (
-                    <div className="wwm-links">
+                    <div className="awwm-links">
                       <a
                         href={player.transfermarktProfile}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="wwm-link"
+                        className="awwm-link"
                         onClick={e => e.stopPropagation()} // link tıklanınca seçilmesin
                       >
                         Transfermarkt Profiline Git →
@@ -168,11 +168,11 @@ const AddPlayer = () => {
 
         {/* Oyuncu seçilince detaylar ve ekleme */}
         {selected && (
-          <div className="wwm-card">
+          <div className="awwm-card">
             <img
               src={selected.image || "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ficrier.org%2Fwp-content%2Fuploads%2F2022%2F12%2Fmedia-Event-Image-Not-Found.jpg&f=1&nofb=1&ipt=7e75f15af6d54f6909bbb39e59f66e217d425eeedc9f11e8ef50e43ad150daf5"}
               alt={selected.name}
-              className="player-image"
+              className="aplayer-image"
             />
             <h2>{selected.name}</h2>
             <ul>
@@ -181,16 +181,16 @@ const AddPlayer = () => {
               <li><strong>Piyasa Değeri:</strong> {selected.marketValue}</li>
             </ul>
             {selected.transfermarktProfile && (
-              <div className="wwm-links">
+              <div className="awwm-links">
                 <a
                   href={selected.transfermarktProfile}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="wwm-link"
+                  className="awwm-link"
                 >
                   Transfermarkt Profiline Git →
                 </a>
-                <button className="wwm-link" onClick={handleAddPlayer}>
+                <button className="awwm-link" onClick={handleAddPlayer}>
                   Oyuncuyu Ekle
                 </button>
               </div>
@@ -209,7 +209,7 @@ const AddPlayer = () => {
         )}
 
         {!selected && results.length === 0 && !loading && (
-          <p className="wwm-info">Lütfen bir oyuncu arayın.</p>
+          <p className="awwm-info">Lütfen bir oyuncu arayın.</p>
         )}
       </div>
     </>
