@@ -1,13 +1,5 @@
 /* TopicDetail.css */
 
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 .topic-detail {
   display: flex;
   flex-direction: column;
@@ -17,6 +9,7 @@ body {
 .content-wrapper {
   flex: 1;
   display: flex;
+  align-self: left;
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
