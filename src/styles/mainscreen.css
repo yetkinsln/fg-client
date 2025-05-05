@@ -1,12 +1,29 @@
+/* mainscreen.css */
 
-body {
-  -webkit-overflow-scrolling: touch;
+/* Reset all default margins and paddings */
+* {
+  box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+/* Ana ekran genel */
 .main-screen {
   background-color: #0f0f0f;
-  min-height: 100dvh;
-  padding: 40px 60px;
+  min-height: 100vh;
+  padding: 40px 20px 80px; /* Added significant bottom padding */
   color: #e0e0e0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative; /* For proper stacking context */
@@ -21,7 +38,7 @@ body {
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 60px; /* Add some padding at the bottom for better scrolling */
+  padding-bottom: 60px; /* Extra padding at bottom to ensure last card is fully visible */
 }
 
 /* Kart stilleri */
@@ -34,6 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  height: 100%; /* Ensure card fills available height */
 }
 
 .card:hover {
@@ -80,6 +98,7 @@ body {
   border-radius: 8px;
   font-weight: 600;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block; /* Ensures proper padding */
 }
 
 .card-button:hover {
@@ -91,16 +110,12 @@ body {
 @media (max-width: 1024px) {
   .card-container {
     gap: 20px;
-    padding-bottom: 20px;;
   }
-  
-  /* Removed width constraint that was forcing layout */
 }
 
 @media (max-width: 768px) {
   .main-screen {
-    padding: 30px 15px;
-    padding-bottom: 20px;
+    padding: 30px 15px 100px; /* Increased bottom padding */
   }
   
   .card-title {
@@ -118,18 +133,24 @@ body {
 }
 
 @media (max-width: 480px) {
+  body, html {
+    min-height: 101vh; /* Small trick to force scrollbar on iOS */
+  }
+  
   .main-screen {
-    padding: 20px 12px;
-    padding-bottom: 20px;
+    padding: 20px 12px 120px; /* Further increased bottom padding for small screens */
+    min-height: 101vh; /* Ensure we're taller than viewport */
   }
   
   .card-container {
     gap: 16px;
     grid-template-columns: 1fr; /* Force single column on small screens */
+    padding-bottom: 80px; /* Extra padding */
   }
 
   .card {
     border-radius: 12px;
+    margin-bottom: 16px; /* Add space between cards */
   }
 
   .card-content {
@@ -156,21 +177,38 @@ body {
 
 /* Fix for iOS safari viewport issues */
 @supports (-webkit-touch-callout: none) {
-  .main-screen {
-    height: auto;
+  html, body {
     height: -webkit-fill-available;
+  }
+  
+  .main-screen {
+    min-height: -webkit-fill-available;
+    padding-bottom: 120px; /* Extra padding for iOS */
   }
 }
 
 /* Ensure content is scrollable on all touch devices */
 @media (hover: none) and (pointer: coarse) {
-  html, body {
-    overflow-y: auto !important;
+  body {
+    overflow-y: scroll !important; /* Force scrolling */
+    height: auto !important;
+    position: static !important;
   }
   
   .main-screen {
     -webkit-overflow-scrolling: touch;
-    overflow-y: auto !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 101vh;
+  }
+  
+  /* Add a large spacer to ensure scrollability */
+  .main-screen::after {
+    content: "";
+    display: block;
+    height: 100px;
+    width: 100%;
+    clear: both;
   }
 }
 
