@@ -108,7 +108,7 @@ const AuctionPage = () => {
       <Navbar />
       <div className="wwm-auction-page">
         <h1 className="wwm-auction-title">Müzayede Alanı</h1>
-
+        <strong>Önemli! Leveliniz ne kadar yüksekse, o kadar krediniz olur.</strong>
         <div className="wwm-auction-search">
           <input
             type="text"
