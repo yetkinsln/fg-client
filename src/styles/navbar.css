@@ -8,11 +8,10 @@
 
 .navbar-container {
     max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+
 }
 .navbar-logo-image{
     width: 36px;
