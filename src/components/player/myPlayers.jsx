@@ -143,7 +143,7 @@ const MyPlayers = () => {
     if (loading) return <p>Yükleniyor...</p>;
 
     return (
-        <>
+        <div className="wwm-main">
             <Navbar />
             <div className="wwm-container">
                 <h1>Eklediğiniz Oyuncular</h1>
@@ -210,17 +210,6 @@ const MyPlayers = () => {
                                     </div>
 
                                     <div className="player-actions">
-                                        {editingPlayerId === player._id ? null : (
-                                            <button
-                                                className="edit-btn"
-                                                onClick={() => {
-                                                    setEditingPlayerId(player._id);
-                                                    setEditedComment(player.comment || '');
-                                                }}
-                                            >
-                                                Düzenle
-                                            </button>
-                                        )}
                                         <button
                                             className="delete-btn"
                                             onClick={() => handleDelete(player._id)}
@@ -236,7 +225,7 @@ const MyPlayers = () => {
                     <p>Henüz oyuncu eklenmemiş.</p>
                 )}
             </div>
-        </>
+        </div>
     );
 };
 

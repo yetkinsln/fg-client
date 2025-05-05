@@ -14,11 +14,15 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
+.navbar-logo-image{
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
 .navbar-logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: aqua;
     text-decoration: none;
 }
 
@@ -29,7 +33,7 @@
 }
 
 .navbar-links li a {
-    color: #d1d5db;
+    color: deeppink;
     text-decoration: none;
     transition: color 0.3s;
 }

@@ -1,308 +1,314 @@
+/* Dark Neon & Gradient Theme for Player Listing */
+
+:root {
+  --background-dark: #0a0a12;
+  --card-bg: #12121f;
+  --text-primary: #ffffff;
+  --text-secondary: snow;
+  --neon-blue: #00c2ff;
+  --neon-purple: #d000ff;
+  --neon-pink: #ff00e5;
+  --neon-green: #00ff9e;
+  --gradient-primary: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  --gradient-secondary: linear-gradient(135deg, var(--neon-pink), var(--neon-green));
+  --shadow-neon: 0 0 10px rgba(0, 194, 255, 0.5);
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+.wwm-main {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-family: 'Poppins', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
 .wwm-container {
-    max-width: 960px;
-    margin: 30px auto 60px auto;
-    padding: 25px 30px;
-    background: #fafafa;
-    border-radius: 12px;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-dark);
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 194, 255, 0.3);
+  letter-spacing: 1px;
+  /* Fallback for background-clip: text */
+  -webkit-text-fill-color: transparent;
+}
+
+/* Error Message */
+.wwm-error {
+  background-color: rgba(255, 0, 85, 0.2);
+  color: #ff3366;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid #ff3366;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layout */
+.wwm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* Player Card */
+.wwm-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 194, 255, 0.1);
+}
+
+.wwm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-neon), 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.wwm-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+/* Player Image Container */
+.player-image-container {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.player-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: var(--gradient-primary) border-box;
+  /* The mask-composite logic only works in some browsers. Use fallback. */
+  /* Remove broken lines for "exclude" for cross-browser safety */
+  /* The following achieves a similar effect, but if you want a neon effect,
+     consider using only box-shadow or combining wrapper + border */
+  box-shadow: 0 0 15px rgba(0, 194, 255, 0.4);
+}
+
+/* Player Info */
+.player-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-info h2 {
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px rgba(0, 194, 255, 0.5);
+}
+
+.player-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.player-info li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.player-info li strong {
+  color: var(--neon-green);
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+/* Comment Container */
+.player-comment-container {
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 2px solid var(--neon-purple);
+}
+
+.player-comment-container h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--neon-purple);
+}
+
+.comment-preview {
+  color: var(--text-secondary);
+}
+
+/* Editor styling */
+.tox-tinymce {
+  border-radius: var(--border-radius) !important;
+  border: 1px solid rgba(208, 0, 255, 0.3) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.tox-editor-header {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Buttons */
+.player-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.edit-btn, .delete-btn, .save-btn, .cancel-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.edit-btn {
+  background: var(--gradient-primary);
+  flex: 1;
+}
+
+.edit-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 194, 255, 0.7);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ff3366, #ff006e);
+  flex: 1;
+}
+
+.delete-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.7);
+}
+
+.save-btn {
+  background: linear-gradient(135deg, var(--neon-green), #00b377);
+  flex: 1;
+}
+
+.save-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 158, 0.7);
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #666, #444);
+  flex: 1;
+}
+
+.cancel-btn:hover {
+  box-shadow: 0 0 15px rgba(150, 150, 150, 0.5);
+}
+
+/* Empty state */
+.wwm-container > p:last-child {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  color: var(--text-secondary);
+  border: 1px dashed rgba(0, 194, 255, 0.3);
+  font-size: 1.2rem;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 194, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .wwm-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .wwm-container {
+    padding: 1rem;
   }
   
   h1 {
-    text-align: center;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
+    font-size: 2rem;
   }
-  
-  .wwm-error {
-    color: #e74c3c;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-  
-  .wwm-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-  }
-  
-  .wwm-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-  }
-  
-  .wwm-card:hover {
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-    transform: translateY(-6px);
-    cursor: default;
-  }
-  
-  .player-image-container {
-    width: 100%;
-    height: 170px;
-    overflow: hidden;
-    border-bottom: 3px solid #3498db;
-  }
-  
-  .player-image {
+}
 
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  
-  .wwm-card:hover .player-image {
-    transform: scale(1.05);
-  }
-  
-  .player-info {
-    padding: 20px 22px 30px 22px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .player-info h2 {
-    margin: 0 0 14px 0;
-    font-size: 1.4rem;
-    color: #34495e;
-    font-weight: 700;
-    user-select: text;
-  }
-  
-  .player-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 18px 0;
-    font-size: 0.95rem;
-    color: #555;
-  }
-  
-  .player-info ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #f0f0f0;
-    user-select: text;
-  }
-  
-  .player-info ul li strong {
-    color: #2980b9;
-    font-weight: 600;
-  }
-  
-  .player-comment-container {
-    margin-top: 15px;
-    border-top: 1.5px solid #ddd;
-    padding-top: 12px;
-  }
-  
-  .player-comment-container h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #2c3e50;
-  }
-  
-  .player-comment-container iframe {
-    width: 100%;
-    height: 110px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    background-color: #fff;
-  }
-  
-  .player-actions {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .edit-btn,
-  .delete-btn {
-    padding: 8px 18px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 7px;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.25s ease, color 0.25s ease;
-  }
-  
-  .edit-btn {
-    background-color: #3498db;
-    color: white;
-    box-shadow: 0 3px 8px rgba(52,152,219,0.4);
-  }
-  
-  .edit-btn:hover {
-    background-color: #1d6fa5;
-    box-shadow: 0 5px 12px rgba(29,111,165,0.5);
-  }
-  
-  .delete-btn {
-    background-color: #e74c3c;
-    color: white;
-    box-shadow: 0 3px 8px rgba(231,76,60,0.4);
-  }
-  
-  .delete-btn:hover {
-    background-color: #b93024;
-    box-shadow: 0 5px 12px rgba(185,43,29,0.6);
-  }
-  
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  p {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-top: 40px;
-    color: #888;
-  }
-  
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
 
-  
-  @media (max-width: 640px) {
-    .wwm-container {
-      margin: 15px 15px 50px 15px;
-      padding: 15px 20px;
-    }
-  
-    .wwm-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .player-image-container {
-      height: 140px;
-    }
-  
-    .player-info h2 {
-      font-size: 1.2rem;
-    }
-  
-    .edit-btn,
-    .delete-btn {
-      padding: 7px 14px;
-      font-size: 0.9rem;
-    }
-  }
-
-
-  .increase-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .increase-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .decrease-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .decrease-btn:hover {
-    background-color: #e53935;
-  }
-  
-  .wwm-search-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .wwm-search-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  .wwm-search-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .wwm-search-button:hover {
-    background-color: #0069d9;
-  }
-  
-  .spinner {
-    border: 3px solid #f3f3f3; 
-    border-top: 3px solid #007bff; 
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    animation: spin 0.8s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-
- .wwm-addedby{
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(to right,transparent, yellow, goldenrod, transparent);
-  padding: 10px;
-  color: black;
- }
- .wwm-addedby small{
-  font-size: 0.8rem;
-  color: #555;
-  font-weight: 400;
-margin-right: 3px;
- }
-
- .wwm-bid-container{
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
- }
- .wwm-bid-input{
-  padding: 5px;
-  width: 100%;
-  outline: 1px solid black;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--neon-blue), var(--neon-purple));
   border-radius: 4px;
-  background-color: whitesmoke;
-  margin-left: 3px;
- }
+}
 
- .increase-btn{
-  background-color: transparent;
-  color: black;
-  border: 1px solid springgreen
- }
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--neon-pink), var(--neon-green));
+}
 
- .decrease-btn{
-  background-color: transparent;
-  color: black;
-  border: 1px solid red
- }
+/* Animations */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 194, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 194, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 194, 255, 0.5);
+  }
+}
+
+.wwm-card:hover .player-image {
+  animation: glow 2s infinite;
+}

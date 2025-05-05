@@ -1,86 +1,249 @@
-.login-form-container {
+/* Dark Neon & Gradient Theme for Login Page */
+
+:root {
+    --background-dark: #0a0a12;
+    --card-bg: #12121f;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3cc;
+    --neon-blue: #00c2ff;
+    --neon-purple: #d000ff;
+    --neon-pink: #ff00e5;
+    --neon-green: #00ff9e;
+    --gradient-primary: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    --gradient-secondary: linear-gradient(135deg, var(--neon-pink), var(--neon-green));
+    --shadow-neon: 0 0 10px rgba(0, 194, 255, 0.5);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: 'Poppins', 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(0, 194, 255, 0.05) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(208, 0, 255, 0.05) 0%, transparent 20%);
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 194, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Login Form Container */
+  .login-form-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f4f6f8; /* Daha yumuşak bir arka plan */
-    min-height: 100vh;
-    padding: 20px; /* Genel iç boşluk */
-}
-
-.login-form-wrapper { /* Formu saran bir div ekleyelim */
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Daha belirgin bir gölge */
-    width: 400px; /* Sabit bir genişlik belirleyelim */
-    max-width: 95%; 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.login-form-title {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    color: #37474f; /* Daha koyu bir başlık rengi */
+    min-height: calc(100vh - 70px); /* Adjust based on navbar height */
+    padding: 2rem;
+  }
+  
+  /* Login Form Wrapper */
+  .login-form-wrapper {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+    border: 1px solid rgba(0, 194, 255, 0.1);
+  }
+  
+  /* Glow effect behind the form */
+  .login-form-wrapper:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 1;
+  }
+  
+  /* fanGang small text */
+  .login-form-wrapper small {
+    display: block;
     text-align: center;
-}
-
-.login-form-group { /* Input ve label gruplaması için */
-    margin-bottom: 20px;
-}
-
-.login-form-label {
-    display: block; /* Label'ı ayrı bir satırda göster */
-    margin-bottom: 5px;
-    color: #546e7a;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.login-form-container input {
-    width: 100%; /* Wrapper içindeki alanı kapla */
-    padding: 12px;
-    border: 1px solid #ced4da; /* Daha belirgin bir border */
-    border-radius: 6px;
-    box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+    font-size: 0.85rem;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(0, 255, 158, 0.5);
+  }
+  
+  /* Login Form Title */
+  .login-form-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 194, 255, 0.3);
+    letter-spacing: 1px;
+  }
+  
+  /* Input Fields */
+  .login-form-wrapper input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 194, 255, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
     font-size: 1rem;
-}
-
-.login-form-container input:focus {
     outline: none;
-    border-color: #007bff; /* Odaklandığında farklı bir border rengi */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Hafif bir odaklanma gölgesi */
-}
-
-.login-form-button {
-    width: 100%; /* Wrapper içindeki alanı kapla */
-    padding: 12px 20px;
-    background-color: black; /* Daha canlı bir buton rengi */
+    transition: all var(--transition-speed);
+    box-sizing: border-box;
+  }
+  
+  .login-form-wrapper input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 194, 255, 0.3);
+  }
+  
+  .login-form-wrapper input::placeholder {
+    color: rgba(179, 179, 204, 0.6);
+  }
+  
+  /* Login Button */
+  .login-form-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gradient-primary);
     color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.2s ease-in-out; /* Yumuşak geçiş efekti */
-}
-
-.login-form-button:hover {
-    background-color: dimgray; /* Hover efekti için daha koyu bir renk */
-}
-
-.login-form-error {
-    color: #dc3545;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.login-form-wrapper small{
-    color: purple;
+    border-radius: var(--border-radius);
     font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .login-form-button:hover {
+    box-shadow: 0 0 15px rgba(0, 194, 255, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .login-form-button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Login Button Animation */
+  .login-form-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.6s;
+  }
+  
+  .login-form-button:hover:before {
+    left: 100%;
+  }
+  
+  /* Message Display */
+  .login-form-wrapper p {
     text-align: center;
-    margin-top: 10px;
-    text-shadow: 0px 0px 5px purple;
-}
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Error Message Style */
+  .login-form-wrapper p.error {
+    color: #ff3366;
+  }
+  
+  /* Success Message Style */
+  .login-form-wrapper p.success {
+    color: var(--neon-green);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 194, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 194, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 194, 255, 0.5);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .login-form-wrapper {
+      padding: 2rem 1.5rem;
+    }
+    
+    .login-form-title {
+      font-size: 1.75rem;
+    }
+    
+    .login-form-wrapper input {
+      padding: 0.8rem 1rem;
+    }
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background-dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--neon-blue), var(--neon-purple));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--neon-pink), var(--neon-green));
+  }

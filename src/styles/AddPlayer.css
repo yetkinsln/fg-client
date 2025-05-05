@@ -216,6 +216,10 @@ button[style]:hover {
   color: white;
 }
 
+.m-info{
+  color: snow;
+}
+
 /* Responsive düzen */
 
 @media screen and (max-width: 600px) {

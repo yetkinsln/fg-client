@@ -1,75 +1,260 @@
-.register-container {
+/* Dark Neon & Gradient Theme for Registration Page */
+
+:root {
+    --background-dark: #0a0a12;
+    --card-bg: #12121f;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3cc;
+    --neon-blue: #00c2ff;
+    --neon-purple: #d000ff;
+    --neon-pink: #ff00e5;
+    --neon-green: #00ff9e;
+    --gradient-primary: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    --gradient-secondary: linear-gradient(135deg, var(--neon-pink), var(--neon-green));
+    --shadow-neon: 0 0 10px rgba(0, 194, 255, 0.5);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: 'Poppins', 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+    background-image: 
+      radial-gradient(circle at 85% 15%, rgba(208, 0, 255, 0.07) 0%, transparent 25%),
+      radial-gradient(circle at 15% 85%, rgba(0, 255, 158, 0.07) 0%, transparent 25%);
+  }
+  
+  /* Registration Container */
+  .register-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: #f8f9fa; /* Açık gri arka plan */
-    padding: 20px;
-}
-
-.register-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    max-width: 95%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.register-form h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    color: #343a40; /* Koyu gri başlık */
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  /* Registration Form */
+  .register-form {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+    border: 1px solid rgba(0, 194, 255, 0.1);
+  }
+  
+  /* Glow effect around the form */
+  .register-form:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: calc(var(--border-radius) - 1px);
+    background: transparent;
+    z-index: -1;
+    box-shadow: 0 0 15px rgba(0, 194, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .register-form:hover:after {
+    opacity: 1;
+  }
+  
+  /* Gradient line at the top */
+  .register-form:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    height: 3px;
+    background: var(--gradient-secondary);
+    z-index: 1;
+  }
+  
+  /* fanGang small text */
+  .register-form small {
+    display: block;
     text-align: center;
-}
-
-.register-form input {
+    font-size: 0.85rem;
+    color: var(--neon-pink);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 0, 229, 0.5);
+  }
+  
+  /* Registration Form Title */
+  .register-form h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(255, 0, 229, 0.3);
+    letter-spacing: 1px;
+  }
+  
+  /* Input Fields */
+  .register-form input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 0, 229, 0.2);
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
     font-size: 1rem;
-}
-
-.register-form input:focus {
     outline: none;
-    border-color: #007bff; /* Odaklandığında mavi border */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-}
-
-.register-form button {
+    transition: all var(--transition-speed);
+    box-sizing: border-box;
+  }
+  
+  .register-form input:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px rgba(255, 0, 229, 0.3);
+  }
+  
+  .register-form input::placeholder {
+    color: rgba(179, 179, 204, 0.6);
+  }
+  
+  /* Register Button */
+  .register-form button {
     width: 100%;
-    padding: 12px 20px;
-    background-color: black; /* Yeşil buton */
+    padding: 1rem;
+    background: var(--gradient-secondary);
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.register-form button:hover {
-    background-color: dimgray; /* Koyu yeşil hover */
-}
-
-.register-form p {
-    margin-top: 20px;
-    color: #dc3545; /* Kırmızı hata mesajı */
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.register-container small{
-    color: purple;
+    border-radius: var(--border-radius);
     font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .register-form button:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 229, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .register-form button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Button Animation */
+  .register-form button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.6s;
+  }
+  
+  .register-form button:hover:before {
+    left: 100%;
+  }
+  
+  /* Message Display */
+  .register-form p {
     text-align: center;
-    margin-top: 10px;
-    text-shadow: 0px 0px 5px purple;
-}
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Error Message Style */
+  .register-form p.error {
+    color: #ff3366;
+  }
+  
+  /* Success Message Style */
+  .register-form p.success {
+    color: var(--neon-green);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .register-form {
+      padding: 2rem 1.5rem;
+    }
+    
+    .register-form h2 {
+      font-size: 1.75rem;
+    }
+    
+    .register-form input {
+      padding: 0.8rem 1rem;
+    }
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background-dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--neon-pink), var(--neon-green));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--neon-blue), var(--neon-purple));
+  }

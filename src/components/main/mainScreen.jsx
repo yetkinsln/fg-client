@@ -11,7 +11,7 @@ const MainScreen = () => {
 
         <div className="card-container">
             <div className="card">
-                <img src="https://i.pinimg.com/474x/9d/45/f4/9d45f4e4bca82de785ee726a12eda3c9.jpg" alt="Card 1" className="card-image" />
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXhmZmdnY2EzOWRpb3oyeGVneTNqeXY2YzR4Yzc0Y2ozemsxOGZ1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TjAcxImn74uoDYVxFl/giphy.gif" alt="Card 1" className="card-image" />
                 <div className="card-content">
                     <h3>Futbolcu Ekle</h3>
                     <p>Henüz eklenmemiş bir oyuncuyu seçip ekleyebilirsin!</p>
@@ -19,7 +19,7 @@ const MainScreen = () => {
                 </div>
             </div>
             <div className="card">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.fxVC00QqqsxUJohvW2ApBgHaE4%26pid%3DApi&f=1&ipt=e61bda11ce4f9d392f3cb80d0230ef92de4d4ecb096059077a1d362dbaa9cc39&ipo=images" alt="Card 2" className="card-image" />
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa204cnM4bGxwNWkxMXY0YTI0c3F1dmIyYWJrNjZ0YzFoNGpoZzZnZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/67ThRZlYBvibtdF9JH/giphy.gif" alt="Card 2" className="card-image" />
                 <div className="card-content">
                     <h3>Müzayede</h3>
                     <p>Ekli futbolcuların değerini belirle.</p>
@@ -27,7 +27,7 @@ const MainScreen = () => {
                 </div>
             </div>
             <div className="card">
-                <img src="https://i.pinimg.com/736x/17/0d/48/170d486808716c1e5925d4aca3d3c24e.jpg" alt="Card 3" className="card-image" />
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmF6NjFleG1vY2luaXJocGQxNHF3bHJrYnprcmRlY28wZWNmNTRpaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ie3U6gTmbY4KTQtOPJ/giphy.gif" alt="Card 3" className="card-image" />
                 <div className="card-content">
                     <h3>Keşfet</h3>
                     <p>Oyuncu vitrinine göz at.</p>
@@ -36,7 +36,7 @@ const MainScreen = () => {
             </div>
 
             <div className="card">
-                <img src="https://i.pinimg.com/736x/a7/9f/8a/a79f8abfb5a6ce80b5a48bcff580ab6a.jpg" alt="Card 4" className="card-image" />
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanlzcjJ4dzJmN2g3MXk5OXJ6cHRweHBwcnNpNmY3dWp1N3VrNWtieCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7qDXDa3rWNrBUuxq/giphy.gif" alt="Card 4" className="card-image" />
                 <div className="card-content">
                     <h3>Genel Sohbet</h3>
                     <p>İnsanlar neyi tartışıyor?</p>

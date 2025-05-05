@@ -22,6 +22,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <div className="navbar-logo">
+                    <img className='navbar-logo-image' src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHdybms0bzB0M3Q0eTBkc2xqOWN1YXBxZzFpc2c0cXpwZmRkNnY0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUNlh2K6n8rwtBuhT4/giphy.gif" alt="" />
                     <a href="/">FanGang</a>
                 </div>
                 <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
