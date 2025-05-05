@@ -6,7 +6,7 @@ body {
 .main-screen {
   background-color: #0f0f0f;
   min-height: 100dvh;
-  padding: 40px 20px;
+  padding: 40px 60px;
   color: #e0e0e0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative; /* For proper stacking context */
@@ -21,7 +21,7 @@ body {
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 20px; /* Add some padding at the bottom for better scrolling */
+  padding-bottom: 60px; /* Add some padding at the bottom for better scrolling */
 }
 
 /* Kart stilleri */
@@ -157,6 +157,7 @@ body {
 /* Fix for iOS safari viewport issues */
 @supports (-webkit-touch-callout: none) {
   .main-screen {
+    height: auto;
     height: -webkit-fill-available;
   }
 }
