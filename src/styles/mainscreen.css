@@ -1,18 +1,11 @@
-/* mainscreen.css */
 
-/* Reset default body and html overflow behavior */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  height: auto;
-  min-height: 100%;
+body {
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Ana ekran genel */
 .main-screen {
   background-color: #0f0f0f;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 40px 20px;
   color: #e0e0e0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
